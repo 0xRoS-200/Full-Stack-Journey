@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 11</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #100f0f;
+        }
+
+        header p {
+            text-align: center;
+            background-color: rgb(231, 101, 101);
+            padding: 10px;
+            border: 2px solid aqua;
+            border-radius: 5px;
+            font-family: cursive;
+            width: 200px;
+            margin: auto;
+        }
+
+        form {
+            width: 250px;
+            padding: 5px;
+            margin: 30px auto; /* Center the form */
+            background-color: rgb(231, 101, 101);
+            border: 2px solid aqua;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <p>Registration Form</p>
+    </header>
+    <section>
+        <form action="/action.php">
+            <label for="email">Email:
+                <input type="email" id="email" name="email" required><br><br>
+            </label>
+
+            <label for="dob">Date of Birth:
+                <input type="date" id="dob" name="dob" required><br><br>
+            </label>
+
+            <label for="colour">Colour:
+                <select name="colour" id="colour">
+                    <option value="Red">Red</option>
+                    <option value="Green">Green</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Cyan">Cyan</option>
+                </select><br><br>
+            </label>
+
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+    <h1>Video Example</h1>
+    <video width="640" height="360" controls autoplay poster="path/to/poster.jpg">
+        <source src="path/to/video.mp4" type="video/mp4">
+        <source src="path/to/video.webm" type="video/webm">
+        <track label="English" kind="subtitles" srclang="en" src="path/to/subtitles.vtt" default>
+        Your browser does not support the video tag.
+    </video>
+</body>
+
+</html>

@@ -1,0 +1,191 @@
+:root {
+  --primary-blue: #3b82f6;
+  --primary-blue-dark: #2563eb;
+  --gray-800: #1f2937;
+  --neutral-400: #9ca3af;
+  --neutral-900: #111827;
+
+  /* Dark mode variables */
+  --bg-dark: #111827;
+  --text-dark: #ffffff;
+  --border-dark: #374151;
+}
+
+body {
+  padding: 2rem 10rem;
+  height: 100vh;
+}
+
+.button-dark-mode {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 3rem;
+}
+
+.hero {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.hero-grid {
+  display: flex;
+  justify-content: center;
+
+}
+
+.content-col h1 {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 5rem;
+  line-height: 1.1;
+
+}
+
+.content-col p {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.cta-group {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.sr-only {
+  display: none;
+}
+
+.input-wrapper {}
+
+input[type='text'] {
+  width: 300px;
+  height: 50px;
+  border: 1px solid var(--neutral-400);
+  border-radius: 6px;
+  padding-left: 20px;
+  color: var(--border-dark);
+  font-size: 1.2rem;
+  font-weight:var(--neutral-400);
+}
+
+.demo-button {
+  margin: 0.5rem 1rem;
+  padding: 1rem 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--primary-blue);
+  color:var(--text-dark);
+  font-weight: 600;
+}
+
+.demo-button:hover {
+  cursor: pointer;
+}
+
+.brands-section {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+}
+
+.trusted-by {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.brand-logos {
+  display: flex;
+  justify-content: flex-start;
+  gap: 40px;
+  align-items: center;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  justify-content: flex-start;
+}
+
+.image-col {
+  display: flex;
+}
+
+.hero-image {
+  width: 700px;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+@media (min-width: 640px) {
+  .hero {}
+
+  .content-col h1 {}
+
+  .cta-group {}
+
+  .demo-button {}
+
+  .input-wrapper {}
+
+  input[type='text'] {}
+}
+
+@media (min-width: 768px) {
+  .content-col h1 {}
+}
+
+@media (min-width: 1024px) {
+  .hero {}
+
+  .hero-grid {}
+
+  .content-col h1 {}
+
+  .cta-group {}
+
+  .brands-section {}
+
+  .image-col {}
+}
+
+@media (min-width: 1280px) {
+  .hero-grid {
+    gap: 3rem;
+  }
+}
+
+.dark-mode-toggle {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--primary-blue);
+  color:var(--text-dark);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.dark-mode-toggle:hover {}
+
+body.dark {
+  color: var(--text-dark);
+  background-color: var(--bg-dark);
+}
+
+.dark-mode-toggle {
+  background-color: var(--primary-blue-dark);
+}
+
+.dark-mode-toggle:hover {
+  background-color: var(--primary-blue-dark);
+  box-shadow: 30px 0 100px #5caaea, -30px 0 100px rgb(250, 81, 216);
+}
+
+input[type='text'].dark {
+  color: var(--text-dark);
+}
+
+input[type='text']::placeholder {}

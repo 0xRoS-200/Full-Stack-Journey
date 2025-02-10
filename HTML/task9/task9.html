@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Elements</title>
+</head>
+<body>
+
+    <h1>Video Example</h1>
+    <video width="640" height="360" controls autoplay poster="path/to/poster.jpg">
+        <source src="path/to/video.mp4" type="video/mp4">
+        <source src="path/to/video.webm" type="video/webm">
+        <track label="English" kind="subtitles" srclang="en" src="path/to/subtitles.vtt" default>
+        Your browser does not support the video tag.
+    </video>
+
+    <h1>Audio Example</h1>
+    <audio controls>
+        <source src="path/to/audio.mp3" type="audio/mpeg">
+        <source src="path/to/audio.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <h1>YouTube Video Example</h1>
+        <source src="path/to/audio.mp3" type="audio/mpeg">
+        <iframe frameborder="1" width="420" height="345" src="//www.youtube.com/embed/C8kSrkz8Hz8"></iframe> 
+    <h1>Media Formats Table</h1>
+    <table border="1">
+        <tr>
+            <th>Format</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>MP4</td>
+            <td>Video</td>
+            <td>Widely supported, good quality with reasonable file size.</td>
+        </tr>
+        <tr>
+            <td>WebM</td>
+            <td>Video</td>
+            <td>Open and royalty-free, supports VP8 and VP9 video codecs.</td>
+        </tr>
+        <tr>
+            <td>OGG</td>
+            <td>Audio</td>
+            <td>Open standard format, supports Vorbis audio codec.</td>
+        </tr>
+        <tr>
+            <td>MP3</td>
+            <td>Audio</td>
+            <td>Very common, supported by most browsers, but patented.</td>
+        </tr>
+        <tr>
+            <td>WAV</td>
+            <td>Audio</td>
+            <td>Uncompressed, high quality sound but large file sizes.</td>
+        </tr>
+    </table>
+
+</body>
+</html>

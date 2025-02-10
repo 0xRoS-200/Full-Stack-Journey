@@ -1,0 +1,205 @@
+/* Challenge CSS */
+:root {
+  --ff-roboto: "Roboto", serif;
+
+  --fw-light: 200;
+  --fw-normal: 400;
+  --fw-bold: 600;
+
+  --col-orange: #ff6b6b;
+  --col-yellow: #ffd93d;
+  --bg-color: #1a1a1a;
+
+  --txt-col: #d0d0d0;
+  --heading-col: #ffffff;
+  --slogan-col: #787878;
+  --card-col: #262626;
+}
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--ff-roboto);
+
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: var(--bg-color);
+  color: var(--txt-col);
+
+}
+
+.container {
+  height: 100vh;
+  margin: 3rem 0;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: var(--fw-bold);
+  color: var(--col-orange);
+}
+
+.subtitle {
+  font-size: 1rem;
+  letter-spacing: 3px;
+  color: var(--slogan-col);
+}
+
+.pricing-container {
+  padding-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  margin-top: 2rem;
+}
+
+.pricing-card {
+  border: 1px solid rgb(55, 55, 55);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 3rem;
+  border-radius: 20px;
+  background-color: #262626;
+}
+
+.pricing-card:hover {
+  transform: scale(1.05);
+  box-shadow: 5px 0 100px #eeff00, 5px 0 100px   rgb(255, 132, 0);
+
+}
+
+.card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.icon {
+  font-size: 1.8rem;
+}
+
+.popular-tag {
+  align-self: center;
+  display: inline-flex;
+  color: var(--bg-color);
+  border-radius: 30px;
+  background-color: var(--col-yellow);
+  padding: 0.4rem 1.2rem;
+  position: relative;
+  top: -45px;
+  font-weight: var(--fw-bold);
+  font-size: 0.8rem;
+}
+
+.price-block {
+  margin-top: 2rem;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #303030;
+  padding: 0.8rem 4rem;
+}
+
+.price {
+  color: var(--col-orange);
+  font-size: 2rem;
+  font-weight: var(--fw-bold);
+}
+
+.period {
+  color: var(--slogan-col);
+  text-transform: uppercase;
+  font-size: 0.7rem;
+}
+
+.features {
+  margin-top: 2rem;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.features li {
+  font-size: 1rem;
+  line-height: 3;
+  color: var(--txt-col);
+}
+
+.features li.disabled {
+  color: var(--slogan-col);
+}
+
+.join-btn {
+  margin-top: 2rem;
+  background-color: #262626;
+  border: 2px solid var(--col-orange);
+  border-radius: 10px;
+  color: var(--col-orange);
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 3rem;
+  cursor: pointer;
+  word-spacing: 2px;
+}
+
+.join-btn:hover {
+  background-color: #3e3e3eca;
+}
+
+/* Custom Class Modifiers */
+.warrior {
+  background-color: #312222;
+  border: 1px solid var(--col-orange);
+}
+
+.warrior .price-block {
+  background-color: #3c2d2d;
+}
+
+.warrior .join-btn {
+  background-color: #3c2d2d38;
+}
+
+.champion {
+  background-color: #312d1d;
+  border: 1px solid var(--col-yellow)
+}
+
+.champion .price {
+  color: var(--col-yellow);
+}
+
+.champion .price-block {
+  background-color: #3c3829;
+}
+
+.champion .join-btn {
+  border: none;
+  background-color: #3c38292e;
+  border: 2px solid rgb(255, 255, 0);
+  color: var(--col-yellow);
+}
+
+.champion .join-btn:hover {
+  background-color: #f7ff071c;
+}
+
+.warrior .join-btn:hover {
+  background-color: #f889001c;
+}

@@ -1,0 +1,149 @@
+:root {
+  --fc-main: #9b440d;
+  --fc-alt: #fffddf;
+  --main-font: "Poppins", serif;
+  --fw-400: 400;
+  --fw-600: 600;
+  --fw-900: 900;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Georgia", serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: var(--fw-600);
+  color: var(--fc-main);
+  padding-bottom: 0.1 rem;
+}
+
+.logo {
+  padding: 0.5rem 3rem;
+}
+
+.logo img {
+  border: 2px solid var(--fc-main);
+  padding: 0.05rem;
+  border-radius: 50%;
+  position: relative;
+  top: 10px;
+}
+
+.nav-menu a {
+  display: inline-flex;
+  flex-direction: space-between;
+  margin-right: 4rem;
+  color: var(--fc-main);
+  font-size: 1rem;
+  font-weight: var(--fw-400);
+}
+
+.nav-menu a:hover {
+  color: orange;
+  transform: scale(1.1);
+}
+
+.hero {
+  height: 70vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/chaipatti.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-text h1 {
+  margin-top: 15rem;
+  font-size: 3rem;
+  color:white;
+}
+
+.hero-text p {
+  color:white;
+  margin:1rem 0;
+  font-size: 1.1rem;
+}
+
+.shop-button {
+  margin-top: 1.5rem;
+  border: none;
+  background-color: var(--fc-main);
+  padding: 1rem 3rem;
+  border-radius: 20px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+
+}
+
+.shop-button:hover {
+  transform: scale(1.1);
+  box-shadow: 30px 0 50px var(--fc-main), -30px 0 50px var(--fc-main);
+}
+
+.tea-collection {
+  color: var(--fc-main);
+  padding: 4rem 0;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 60vh;
+
+}
+
+.tea-collection h2 {
+  text-align: center;
+}
+
+.tea-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 2rem 0;
+
+}
+
+.tea-card {
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  width: 300px;
+  height: 250px;
+  padding: 2rem 1rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.157);
+  border-radius: 10px;
+}
+
+.tea-card h3 {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  color: var(--fc-main);
+}
+
+.tea-card p {
+  margin-top: 1rem;
+ color: rgb(103, 101, 101);
+ text-align: center;
+ font-size: 1.1rem;
+}
