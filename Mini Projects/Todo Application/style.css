@@ -1,8 +1,9 @@
 :root {
-    --bg-main: #070F2B;
-    --bg-main2: #1B1A55;
-    --fc-highlights: #535C91;
-    --fc-extrahighlights: #9290C3;
+    --bg-main: #12b0ff;
+    --bg-alr: #f5f9fc;
+    --bg-highlights: #bae8fd;
+    --fc-highlights: #004566;
+    --fc-main: #fefefe;
 
     --ff-highlights: "Sour Gummy", serif;
     --ff-main: "Roboto", serif;
@@ -67,10 +68,39 @@ body {
 .camera {
     height: 15px;
     width: 15px;
-    background-image: linear-gradient(to right, rgba(128, 130, 132, 0.155) , rgba(0, 221, 255, 0.195));
+    background-image: linear-gradient(to right, rgba(128, 130, 132, 0.155), rgba(0, 221, 255, 0.195));
     border-radius: 50%;
     border: 1px solid rgba(0, 0, 0, 0.376);
     position: relative;
-    top:15px;
-    right:-5px;
+    top: 15px;
+    right: -5px;
+}
+
+#Todo-App-Landing {
+    height: 460px;
+    width: 600px;
+    position: relative;
+    top: -185px;
+    right: -40px;
+    border-radius: 5px;
+    overflow-y: auto;
+}
+
+.outer-border {
+    height: 800px;
+    position: relative;
+    background: linear-gradient(to right, rgb(132, 183, 233), rgba(243, 180, 131, 0.768));
+    border-radius: 10px;
+    padding: 6px;
+}
+
+.landing-inner {
+    background: var(--bg-main);
+    padding: 25px;
+    border-radius: 10px 10px 0 0;
+    height: 405px;    
+}
+.landing-inner nav{
+    display: flex;
+    
 }
