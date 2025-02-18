@@ -1,0 +1,76 @@
+:root {
+    --bg-main: #070F2B;
+    --bg-main2: #1B1A55;
+    --fc-highlights: #535C91;
+    --fc-extrahighlights: #9290C3;
+
+    --ff-highlights: "Sour Gummy", serif;
+    --ff-main: "Roboto", serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: hsla(0, 0%, 0%, 0.3)
+}
+
+.ipad {
+    background-color: rgba(0, 0, 0, 0.85);
+    height: 500px;
+    width: 700px;
+    border: 5px solid hsla(0, 1%, 38%, 0.552);
+    border-radius: 25px;
+}
+
+.power-button {
+    height: 40px;
+    width: 5px;
+    background-color: hsla(0, 3%, 21%, 0.861);
+    border-radius: 5px 5px 5px 5px;
+    position: relative;
+    left: -8px;
+    top: 35px;
+}
+
+.volume-button {
+    height: 5px;
+    width: 80px;
+    background-color: hsla(0, 3%, 21%, 0.861);
+    border-radius: 5px 5px 5px 5px;
+    position: relative;
+    left: 45px;
+    top: -47px;
+}
+
+.touchid {
+    height: 40px;
+    width: 40px;
+    background-color: hsla(0, 3%, 21%, 0.914);
+    border-radius: 50%;
+    position: relative;
+    right: -650px;
+    top: 195px;
+    border: 1px solid rgba(128, 128, 128, 0.887);
+}
+
+.camera-notch {
+    height: 100px;
+    width: 25px;
+    background-color: hsla(0, 1%, 22%, 0.387);
+    position: relative;
+    top: 100px;
+    border-radius: 0 5px 5px 0;
+}
+
+.camera {
+    height: 15px;
+    width: 15px;
+    background-image: linear-gradient(to right, rgba(128, 130, 132, 0.155) , rgba(0, 221, 255, 0.195));
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.376);
+    position: relative;
+    top:15px;
+    right:-5px;
+}
