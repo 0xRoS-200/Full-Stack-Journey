@@ -1,6 +1,35 @@
-document.getElementById("early-access-btn").addEventListener("click", function() {
+document.getElementById("early-access-btn").addEventListener("click", function () {
     let todoLanding = document.getElementById("Todo-App-Landing");
     let todoMain = document.getElementById("Todo-App-Main");
+    function getDate() {
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+        today = dd + '/' + mm + '/' + yyyy;
+        return today;
+    }
+
+    function getDay() {
+        const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+        const d = new Date();
+        let day = days[d.getDay()];
+        return day;
+    }
+
+    let date = document.getElementById("date");
+    if (!date.textContent.trim()) {
+        date.textContent = getDate();
+    }
+
+    let day = document.getElementById("Day");
+    if (!day.textContent.trim()) {
+        day.textContent = getDay();
+    }
+
+
+
 
     // Ensure proper hiding & showing
     if (todoLanding.dataset.visible === "true") {
@@ -12,7 +41,7 @@ document.getElementById("early-access-btn").addEventListener("click", function()
     }
 });
 
-document.getElementById("touch-id").addEventListener("click", function() {
+document.getElementById("touch-id").addEventListener("click", function () {
     let todoLanding = document.getElementById("Todo-App-Landing");
     let todoMain = document.getElementById("Todo-App-Main");
 
@@ -25,3 +54,4 @@ document.getElementById("touch-id").addEventListener("click", function() {
         todoLanding.style.display = "block"; // Shows the landing page
     }
 });
+
