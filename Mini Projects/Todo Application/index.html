@@ -1,46 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mordern To-Do App</title>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Schoolbell&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap");
-      @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
-    </style>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="ipad">
-      <div class="power-button"></div>
-      <div class="volume-button"></div>
-      <div class="touchid"></div>
-      <div class="screen">
-        <div class="camera-notch">
-          <div class="camera"></div>
-          <div id="Todo-App-Landing" class="Landing">
-            <div class="outer-border">
-              <div class="landing-inner">
-                <nav>
-                  <p><span>To-Do</span> App</p>
-                  <button>Get early access</button>
-                </nav>
-                <p class="landing-hero-txt">
-                  Personalised for your Excellence, Stay Organized, Stay
-                  Productive!
-                </p>
-                <img
-                  src="images/Todoimg.jpg"
-                  alt="Todo Image"
-                  class="landing-img"
-                />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mordern To-Do App</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Schoolbell&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+  </style>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="ipad">
+    <div class="power-button"></div>
+    <div class="volume-button"></div>
+    <div class="touchid" id="touch-id"></div>
+    <div class="screen">
+      <div class="camera-notch">
+        <div class="camera"></div>
+        <div id="Todo-App-Landing" class="Landing" data-visible="true">
+          <div class="outer-border">
+            <div class="landing-inner">
+              <nav>
+                <p><span>To-Do</span> App</p>
+                <button id="early-access-btn">Get early access</button>
+              </nav>
+              <p class="landing-hero-txt">
+                Personalised for your Excellence, Stay Organized, Stay
+                Productive!
+              </p>
+              <div class="slideshow-container">
+                <img class="slide" src="images/Todoimg.jpg" alt="Slide 1">
+                <img class="slide" src="images/Todoimg2.jpg" alt="Slide 2">
+                <img class="slide" src="images/Todoimg3.jpg" alt="Slide 3">
               </div>
             </div>
           </div>
-          <div class="Todo-App-Main"></div>
+        </div>
+        <div id="Todo-App-Main" data-visible="false" class="hidden">
+          <h1>Welcome to Your To-Do App</h1>
+          <p>Manage your tasks efficiently!</p>
         </div>
       </div>
     </div>
-  </body>
-  <script src="index.js"></script>
+  </div>
+</body>
+<script src="index.js"></script>
+
 </html>
