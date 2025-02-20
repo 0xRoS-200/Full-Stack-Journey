@@ -380,3 +380,45 @@ body {
     border-radius: 10px;
     border: 0.5px solid rgba(255, 255, 255, 0.896);
 }
+
+.task-container {
+    display: flex;
+}
+
+.task-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.2em 0.5em;
+    align-items: center;
+    padding: 0.5em;
+}
+
+.nav-todo-icon {
+    display: flex;
+    align-items: center;
+    color: rgb(250, 16, 47);
+    gap: 5px;
+}
+
+.tsknav {
+    height: 15px;
+}
+
+.task-nav button {
+    border: none;
+    background-color: #ffffff;
+    color: var(--bg-main);
+    font-size: 0.7em;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    border-radius: 10px;
+    padding: 3px 5px;
+    cursor: pointer;
+}
+
+.task-nav button:hover {
+    transform: scale(1.05);
+    box-shadow:1px -1px 10px rgb(242, 0, 254), -1px 1px 10px rgb(50, 0, 250); ;
+}
