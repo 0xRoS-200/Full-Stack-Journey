@@ -1,24 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Function to get current date in DD/MM/YYYY format
     function getDate() {
         const today = new Date();
-        return today.toLocaleDateString("en-GB"); // Formats as DD/MM/YYYY
+        return today.toLocaleDateString("en-GB"); 
     }
 
-    // Function to get the current day name
     function getDay() {
         const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
         return days[new Date().getDay()];
     }
 
-    // Set date and day only once when the page loads
     const dateElem = document.getElementById("date");
     const dayElem = document.getElementById("Day");
 
     if (dateElem && !dateElem.textContent.trim()) dateElem.textContent = getDate();
     if (dayElem && !dayElem.textContent.trim()) dayElem.textContent = getDay();
 
-    // Page transition handling
     const todoLanding = document.getElementById("Todo-App-Landing");
     const todoMain = document.getElementById("Todo-App-Main");
     const earlyAccessBtn = document.getElementById("early-access-btn");
@@ -36,13 +32,10 @@ document.addEventListener("DOMContentLoaded", function () {
     function toggleButtons(showDashboard) {
         dashboard.classList.toggle("button-sidebar", showDashboard);
         task.classList.toggle("button-sidebar", !showDashboard);
-
-        // Call toggleContent() when toggling dashboard and tasks
         toggleContent(showDashboard);
     }
 
     function toggleContent(showDashboardContent) {
-        // Convert HTMLCollection to array and loop through
         [...contentDashboard].forEach(el => el.classList.toggle("hidden", !showDashboardContent));
         [...contentTasks].forEach(el => el.classList.toggle("hidden", showDashboardContent));
     }
@@ -51,4 +44,6 @@ document.addEventListener("DOMContentLoaded", function () {
     touchIdBtn?.addEventListener("click", () => togglePages(false));
     dashboard?.addEventListener("click", () => toggleButtons(true));
     task?.addEventListener("click", () => toggleButtons(false));
+
+    toggleButtons(true); // Ensures the layout is correct when the page loads
 });
