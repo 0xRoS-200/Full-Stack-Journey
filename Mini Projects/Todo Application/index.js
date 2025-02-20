@@ -23,12 +23,32 @@ document.addEventListener("DOMContentLoaded", function () {
     const todoMain = document.getElementById("Todo-App-Main");
     const earlyAccessBtn = document.getElementById("early-access-btn");
     const touchIdBtn = document.getElementById("touch-id");
+    const dashboard = document.getElementById("dashboard");
+    const task = document.getElementById("task");
+    const contentDashboard = document.getElementsByClassName("main-content-dashboard");
+    const contentTasks = document.getElementsByClassName("main-content-tasks");
 
     function togglePages(showMain) {
         todoLanding.classList.toggle("hidden", showMain);
         todoMain.classList.toggle("hidden", !showMain);
     }
 
+    function toggleButtons(showDashboard) {
+        dashboard.classList.toggle("button-sidebar", showDashboard);
+        task.classList.toggle("button-sidebar", !showDashboard);
+
+        // Call toggleContent() when toggling dashboard and tasks
+        toggleContent(showDashboard);
+    }
+
+    function toggleContent(showDashboardContent) {
+        // Convert HTMLCollection to array and loop through
+        [...contentDashboard].forEach(el => el.classList.toggle("hidden", !showDashboardContent));
+        [...contentTasks].forEach(el => el.classList.toggle("hidden", showDashboardContent));
+    }
+
     earlyAccessBtn?.addEventListener("click", () => togglePages(true));
     touchIdBtn?.addEventListener("click", () => togglePages(false));
+    dashboard?.addEventListener("click", () => toggleButtons(true));
+    task?.addEventListener("click", () => toggleButtons(false));
 });
