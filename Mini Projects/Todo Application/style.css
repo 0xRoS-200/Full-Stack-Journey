@@ -498,7 +498,7 @@ body {
 #task_heading {
     border: none;
     background-color: rgba(255, 255, 255, 0.705);
-    padding: 0.4em 0.2em;
+    padding: 0.3em 0.2em;
     border-radius: 20px;
     text-align: left;
     box-shadow: 1px 1px 5px rgba(243, 146, 0, 0.767);
