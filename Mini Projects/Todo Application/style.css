@@ -361,37 +361,32 @@ body {
     overflow: hidden;
     margin: 1.3em 0.5em;
     border-radius: 5px;
-    display: grid;
-    grid-template-columns: 1.5fr 1.2fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 10px;
     box-shadow: 1px -1px 5px rgb(0, 254, 30), -1px 1px 5px rgb(246, 250, 0);
     padding: 0.5em;
 }
 
 .todo-task-dashboard {
-    grid-row: span 2;
     border-radius: 10px;
-    border: 0.5px solid rgba(255, 255, 255, 0.896);
-}
-
-.task-status-dashboard,
-.completed-task-dashboard {
-    border-radius: 10px;
-    border: 0.5px solid rgba(255, 255, 255, 0.896);
-}
-
-.task-container {
+    border: 0.5px solid rgba(253, 252, 252, 0.35);
+    height: 100%;
     display: flex;
+    flex-direction: column;
+}
+
+.nav-container {
+    display: flex;
+    border-bottom: 1px solid grey;
+    height: 20px;
+    padding: 0.3em 0.5em;
 }
 
 .task-nav {
     display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding: 0.2em 0.5em;
+    width: 96%;
+    padding: 0 0.5em;
     align-items: center;
     padding: 0.5em;
+    justify-content: space-between;
 }
 
 .nav-todo-icon {
@@ -399,6 +394,7 @@ body {
     align-items: center;
     color: rgb(250, 16, 47);
     gap: 5px;
+    font-size: 0.8em;
 }
 
 .tsknav {
@@ -407,18 +403,149 @@ body {
 
 .task-nav button {
     border: none;
-    background-color: #ffffff;
+    background-color: #000000;
     color: var(--bg-main);
-    font-size: 0.7em;
+    font-size: 0.6em;
     display: flex;
     align-items: center;
-    gap: 2px;
+    gap: 5px;
     border-radius: 10px;
-    padding: 3px 5px;
+    padding: 3px 10px;
     cursor: pointer;
 }
 
 .task-nav button:hover {
     transform: scale(1.05);
-    box-shadow:1px -1px 10px rgb(242, 0, 254), -1px 1px 10px rgb(50, 0, 250); ;
+    border: 1px solid rgb(242, 0, 254);
+    box-shadow: 1px -1px 10px rgb(242, 0, 254), -1px 1px 10px rgb(50, 0, 250);
+}
+
+.task-nav button:active {
+    background-color: #ffffff;
+}
+
+.task-body-main {
+    display: flex;
+    flex-direction: column;
+    background-color: #007bff79;
+    height: 100%;
+    overflow: scroll;
+}
+
+.main-content-tasks {
+    width: 90%;
+    height: 93%;
+    margin-top: 1.5em;
+    padding: 0 0.4em;
+    font-family: var(--ff-main);
+    font-weight: 500;
+    color: rgb(255, 0, 0);
+}
+
+.main-content-tasks h3 {
+    display: flex;
+    justify-content: center;
+}
+
+.manager-container {
+    display: flex;
+    height: 80%;
+    padding: 0.2em 0.8em;
+    align-items: center;
+    gap: 0.8em;
+    box-shadow: 1px 1px 3px rgb(49, 245, 0), -1px -1px 3px rgb(255, 238, 2);
+    border-radius: 15px;
+}
+
+.task-form {
+    display: flex;
+    background-color: #bae8fd6b;
+    width: 58%;
+    height: 90%;
+    border-radius: 15px;
+    overflow: scroll;
+    box-shadow: 1px 1px 5px rgb(255, 255, 255), -1px -1px 5px rgb(255, 255, 255);
+    font-family: var(--ff-main);
+    color: white;
+    padding: 0 0.6em;
+}
+
+.task-showcase {
+    background-color: #bae8fd6b;
+    width: 50%;
+    height: 90%;
+    border-radius: 15px;
+    overflow: scroll;
+    box-shadow: 1px 1px 5px rgb(255, 255, 255), -1px -1px 5px rgb(255, 255, 255);
+}
+
+.todo_list {
+    display: flex;
+    font-size: 0.7em;
+    color: white;
+    gap: 0 0.3em;
+    align-items: center;
+}
+
+.todo_list img {
+    height: 15px;
+}
+
+.todo_list span {
+    color: red;
+}
+
+#task_heading {
+    border: none;
+    background-color: rgba(255, 255, 255, 0.705);
+    padding: 0.4em 0.2em;
+    border-radius: 20px;
+    text-align: left;
+    box-shadow: 1px 1px 5px rgba(243, 146, 0, 0.767);
+}
+
+.todo-task-magagement {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+}
+
+select {
+    box-shadow: 1px 1px 5px rgba(243, 146, 0, 0.767);
+    width: 150px;
+    padding: 2px 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    background-color: #f9f9f9bd;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    appearance: none;
+    /* Remove default browser styles */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+select {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23666'%3E%3Cpath d='M7 10l5 5 5-5H7z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+    padding-right: 30px;
+}
+
+select:hover {
+    border-color: #007bff;
+}
+
+select:focus {
+    outline: none;
+    border-color: #007bffde;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+option {
+    font-size: 12px;
 }
