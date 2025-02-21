@@ -71,11 +71,19 @@
                         </div>
                         <button>
                           <img src="icons/add.png" alt="add" class="tsknav" />
-                          Add Task
+                          Edit Mode
                         </button>
                       </div>
                     </div>
-                    <div class="task-body-main">dssdsddss</div>
+                    <div class="task-body-main">
+                      <ul><li id="todo-list">
+                        <div class="todo-list-heading"></div>
+                        <div class="todo-list-description"></div>
+                        <div class="todo-list-priority"></div>
+                        <div class="todo-list-date"></div>
+                        <div class="todo-list-checkbox"></div>
+                      </li></ul>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -86,22 +94,21 @@
                     <form class="todo-task-magagement">
                       <h3 class="todo_list"><span>To-Do</span> List <img src="icons/form.png" alt="form"></h3>
                       <label for="task_heading"> Task: 
-                        <input type="text" placeholder="Enter Task Heading" id="task_heading">
+                        <input type="text" placeholder="Enter Task Heading" id="task_heading" required>
                       </label>
                       <label for="priority">Priority: 
-                        <select name="Priority" id="priority">
+                        <select name="Priority" id="priority" required>
                           <option value="Least">Least</option>
                           <option value="Moderate">Moderate</option>
                           <option value="High">High</option>
                         </select>
                       </label>
-                      <label for="">Description: 
-
+                      <label for="details">Task Details: 
+                        <input type="text" placeholder="Details" id="details" required>
                       </label>
                     </form>
+                    <button id="task_submission">Submit</button>
                   </div>
-                  <div class="task-showcase"></div>
-                </div>
               </div>
             </div>
           </div>
