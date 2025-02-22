@@ -2,6 +2,7 @@
     --bg-main: #12b0ff;
     --bg-alr: #f5f9fc;
     --fc-main: #fefefe;
+    --bg-todo-least: rgba(255, 255, 255, 0.797);
 
     --ff-highlights: "Sour Gummy", serif;
     --ff-main: "Roboto", serif;
@@ -24,6 +25,7 @@ body {
         url(images/pexels-steve-29139966.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    overflow: hidden;
 }
 
 
@@ -429,7 +431,7 @@ body {
     overflow-x: scroll;
 }
 
-.task-body-main ul{
+.task-body-main ul {
     list-style-type: none;
     row-gap: 10px;
     display: flex;
@@ -437,7 +439,8 @@ body {
     justify-content: center;
 }
 
-#todo-list-contents {
+
+.todo-list-contents {
     background-color: rgba(255, 255, 255, 0.797);
     list-style-type: none;
     width: 90%;
@@ -447,9 +450,15 @@ body {
     left: -20px;
     display: flex;
     flex-direction: column;
+    row-gap: 8px;
 }
 
-.todo-list-heading{
+#completed-tasks {
+    text-decoration: line-through;
+    background-color: rgba(148, 246, 131, 0.853) !important;
+}
+
+.todo-list-heading {
     position: relative;
     align-self: center;
     color: red;
@@ -457,7 +466,35 @@ body {
     font-size: 1.1em;
 }
 
+.todo-list-description {
+    font-size: 0.9em;
+    font-family: var(--ff-main);
+}
 
+.prioritynav {
+    background-color: #000000c0;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.2em 0.5em;
+    border-radius: 10px;
+    font-size: 0.7em;
+}
+
+.todo-list-priority {
+    display: flex;
+    align-content: center;
+    gap: 5px;
+
+}
+
+.circle {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background: #000;
+    border: 1.5px solid rgb(38, 0, 255);
+}
 
 .main-content-tasks {
     width: 90%;
