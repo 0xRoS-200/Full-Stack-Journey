@@ -401,7 +401,7 @@ body {
     height: 15px;
 }
 
-.task-nav button {
+#edit_button {
     border: none;
     background-color: #000000;
     color: var(--bg-main);
@@ -414,14 +414,10 @@ body {
     cursor: pointer;
 }
 
-.task-nav button:hover {
+#edit_button:hover {
     transform: scale(1.05);
     border: 1px solid rgb(242, 0, 254);
     box-shadow: 1px -1px 10px rgb(242, 0, 254), -1px 1px 10px rgb(50, 0, 250);
-}
-
-.task-nav button:active {
-    background-color: #ffffff;
 }
 
 .task-body-main {
@@ -453,7 +449,7 @@ body {
     row-gap: 8px;
 }
 
-#completed-tasks {
+#completed-tasks {    /* to be added after task is completed*/
     text-decoration: line-through;
     background-color: rgba(148, 246, 131, 0.853) !important;
 }

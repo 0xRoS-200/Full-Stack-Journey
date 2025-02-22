@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     function getDate() {
         const today = new Date();
-        return today.toLocaleDateString("en-GB"); 
+        return today.toLocaleDateString("en-GB");
     }
 
     function getDay() {
@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const task = document.getElementById("task");
     const contentDashboard = document.getElementsByClassName("main-content-dashboard");
     const contentTasks = document.getElementsByClassName("main-content-tasks");
+    const editButton = document.getElementById("edit_button");
 
     function togglePages(showMain) {
         todoLanding.classList.toggle("hidden", showMain);
@@ -40,10 +41,14 @@ document.addEventListener("DOMContentLoaded", function () {
         [...contentTasks].forEach(el => el.classList.toggle("hidden", showDashboardContent));
     }
 
+    function editButtonfunction() {
+        (editButton.style.backgroundColor === "") ? editButton.style.backgroundColor = "#ffffff" : editButton.style.backgroundColor = "";
+    }
+
     earlyAccessBtn?.addEventListener("click", () => togglePages(true));
     touchIdBtn?.addEventListener("click", () => togglePages(false));
     dashboard?.addEventListener("click", () => toggleButtons(true));
     task?.addEventListener("click", () => toggleButtons(false));
-
+    editButton?.addEventListener("click", () => editButtonfunction());
     toggleButtons(true); // Ensures the layout is correct when the page loads
 });
