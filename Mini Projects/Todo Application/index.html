@@ -1,122 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mordern To-Do App</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Schoolbell&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mordern To-Do App</title>
-  <style>
-    @import url("https://fonts.googleapis.com/css2?family=Schoolbell&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap");
-    @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
-  </style>
-  <link rel="stylesheet" href="style.css" />
-</head>
-
-<body>
-  <div class="ipad">
-    <div class="power-button"></div>
-    <div class="volume-button"></div>
-    <div class="touchid" id="touch-id"></div>
-    <div class="screen">
-      <div class="camera-notch">
-        <div class="camera"></div>
-        <div id="Todo-App-Landing" class="Landing" data-visible="true">
-          <div class="outer-border">
-            <div class="landing-inner">
-              <nav>
-                <p><span>To-Do</span> App</p>
-                <button id="early-access-btn">Get early access</button>
-              </nav>
-              <h1 class="landing-hero-txt">
-                Personalised for your Excellence, Stay Organized, Stay
-                Productive!
-              </h1>
-              <div class="slideshow-container">
-                <img class="slide" src="images/Todoimg.jpg" alt="Slide 1" />
-                <img class="slide" src="images/Todoimg2.jpg" alt="Slide 2" />
-                <img class="slide" src="images/Todoimg3.jpg" alt="Slide 3" />
+  <body>
+    <div class="ipad">
+      <div class="power-button"></div>
+      <div class="volume-button"></div>
+      <div class="touchid" id="touch-id"></div>
+      <div class="screen">
+        <div class="camera-notch">
+          <div class="camera"></div>
+          <div id="Todo-App-Landing" class="Landing" data-visible="true">
+            <div class="outer-border">
+              <div class="landing-inner">
+                <nav>
+                  <p><span>To-Do</span> App</p>
+                  <button id="early-access-btn">Get early access</button>
+                </nav>
+                <h1 class="landing-hero-txt">
+                  Personalised for your Excellence, Stay Organized, Stay
+                  Productive!
+                </h1>
+                <div class="slideshow-container">
+                  <img class="slide" src="images/Todoimg.jpg" alt="Slide 1" />
+                  <img class="slide" src="images/Todoimg2.jpg" alt="Slide 2" />
+                  <img class="slide" src="images/Todoimg3.jpg" alt="Slide 3" />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div id="Todo-App-Main" data-visible="false" class="hidden">
-          <div class="outer-border">
-            <div class="main-nav">
-              <p class="dashboard"><span>Dash</span>board</p>
-              <div class="date-class">
-                <div id="Day"></div>
-                <div class="date" id="date"></div>
-              </div>
-            </div>
-            <div class="main-hero">
-              <div class="main-sidebar">
-                <div class="sidebar-container">
-                  <div class="sidebar-items button-sidebar" id="dashboard">
-                    <img src="icons/dashboard.png" alt="DashBoard" /><span>Dashboard</span>
-                  </div>
-                  <div class="sidebar-items" id="task">
-                    <img src="icons/task.png" alt="Task" /><span>Task</span>
-                  </div>
+          <div id="Todo-App-Main" data-visible="false" class="hidden">
+            <div class="outer-border">
+              <div class="main-nav">
+                <p class="dashboard"><span>Dash</span>board</p>
+                <div class="date-class">
+                  <div id="Day"></div>
+                  <div class="date" id="date"></div>
                 </div>
               </div>
-              <div class="main-content-dashboard">
-                <span class="welcome">Welcome Back, User! &#128075;</span>
-                <div class="task-container-dashboard">
-                  <div class="todo-task-dashboard">
-                    <div class="nav-container">
-                      <div class="task-nav">
-                        <div class="nav-todo-icon">
-                          <img src="icons/todo.png" alt="todo" class="tsknav" />
-                          <span>To-Do</span>
+              <div class="main-hero">
+                <div class="main-sidebar">
+                  <div class="sidebar-container">
+                    <div class="sidebar-items button-sidebar" id="dashboard">
+                      <img src="icons/dashboard.png" alt="DashBoard" /><span
+                        >Dashboard</span
+                      >
+                    </div>
+                    <div class="sidebar-items" id="task">
+                      <img src="icons/task.png" alt="Task" /><span>Task</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="main-content-dashboard">
+                  <span class="welcome">Welcome Back, User! &#128075;</span>
+                  <div class="task-container-dashboard">
+                    <div class="todo-task-dashboard">
+                      <div class="nav-container">
+                        <div class="task-nav">
+                          <div class="nav-todo-icon">
+                            <img
+                              src="icons/todo.png"
+                              alt="todo"
+                              class="tsknav"
+                            />
+                            <span>To-Do</span>
+                          </div>
+                          <button>
+                            <img src="icons/add.png" alt="add" class="tsknav" />
+                            Edit Mode
+                          </button>
                         </div>
-                        <button>
-                          <img src="icons/add.png" alt="add" class="tsknav" />
-                          Edit Mode
-                        </button>
+                      </div>
+                      <div class="task-body-main">
+                        <ul>
+                          <li id="todo-list-contents">
+                            <div class="todo-list-heading">
+                              This is a Heading
+                            </div>
+                            <div class="todo-list-description">
+                              Lorem ipsum dolor sit amet consectetur adipisicing
+                              elit. Eveniet, sequi.
+                            </div>
+                            <div class="todo-list-priority">Moderate</div>
+                            <div class="todo-list-date">22/02/2025</div>
+                            <div class="todo-list-checkbox"></div>
+                          </li>
+                          <li id="todo-list-contents">
+                            <div class="todo-list-heading">
+                              This is a Heading
+                            </div>
+                            <div class="todo-list-description">
+                              Lorem ipsum dolor sit amet consectetur adipisicing
+                              elit. Eveniet, sequi.
+                            </div>
+                            <div class="prioritynav">
+                              <div class="todo-list-priority">Moderate</div>
+                              <div class="todo-list-date">22/02/2025</div>
+                            </div>
+                            <div class="todo-list-checkbox"></div>
+                          </li>
+                        </ul>
                       </div>
                     </div>
-                    <div class="task-body-main">
-                      <ul><li id="todo-list">
-                        <div class="todo-list-heading"></div>
-                        <div class="todo-list-description"></div>
-                        <div class="todo-list-priority"></div>
-                        <div class="todo-list-date"></div>
-                        <div class="todo-list-checkbox"></div>
-                      </li></ul>
+                  </div>
+                </div>
+                <div class="main-content-tasks">
+                  <h3>Tasks Manager</h3>
+                  <div class="manager-container">
+                    <div class="task-form">
+                      <form class="todo-task-magagement">
+                        <h3 class="todo_list">
+                          <span>To-Do</span> List
+                          <img src="icons/form.png" alt="form" />
+                        </h3>
+                        <label for="task_heading">
+                          Task:
+                          <input
+                            type="text"
+                            placeholder="Enter Task Heading"
+                            id="task_heading"
+                            required
+                          />
+                        </label>
+                        <label for="priority"
+                          >Priority:
+                          <select name="Priority" id="priority" required>
+                            <option value="" disabled selected>
+                              Select priority
+                            </option>
+                            <option value="Least">Least</option>
+                            <option value="Moderate">Moderate</option>
+                            <option value="High">High</option>
+                          </select>
+                        </label>
+                        <label for="details"
+                          >Task Details:
+                          <input
+                            type="text"
+                            placeholder="Details"
+                            id="details"
+                            required
+                          />
+                        </label>
+                      </form>
+                      <button id="task_submission">Submit</button>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="main-content-tasks">
-                <h3>Tasks Manager</h3>
-                <div class="manager-container">
-                  <div class="task-form">
-                    <form class="todo-task-magagement">
-                      <h3 class="todo_list"><span>To-Do</span> List <img src="icons/form.png" alt="form"></h3>
-                      <label for="task_heading"> Task: 
-                        <input type="text" placeholder="Enter Task Heading" id="task_heading" required>
-                      </label>
-                      <label for="priority">Priority: 
-                        <select name="Priority" id="priority" required>
-                          <option value="Least">Least</option>
-                          <option value="Moderate">Moderate</option>
-                          <option value="High">High</option>
-                        </select>
-                      </label>
-                      <label for="details">Task Details: 
-                        <input type="text" placeholder="Details" id="details" required>
-                      </label>
-                    </form>
-                    <button id="task_submission">Submit</button>
-                  </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</body>
-<script src="index.js"></script>
-
+    <script src="index.js"></script>
+  </body>
 </html>
