@@ -87,6 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (taskClickCount === 1) {
             taskItem.classList.toggle("completed-task");
+            sortTasksByPriority(); // Re-sort tasks after marking as completed
         }
 
         // Store updated click count in dataset
@@ -122,7 +123,12 @@ document.addEventListener("DOMContentLoaded", function () {
     function sortTasksByPriority() {
         const tasks = Array.from(taskListContainer.children);
 
-        tasks.sort((a, b) => {
+        // Separate completed and incomplete tasks
+        const incompleteTasks = tasks.filter(task => !task.classList.contains("completed-task"));
+        const completedTasks = tasks.filter(task => task.classList.contains("completed-task"));
+
+        // Sort incomplete tasks by priority
+        incompleteTasks.sort((a, b) => {
             const priorityA = priorityLevels[a.querySelector(".priority-text").textContent];
             const priorityB = priorityLevels[b.querySelector(".priority-text").textContent];
             return priorityB - priorityA; // Sort in descending order (High to Low)
@@ -130,7 +136,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Clear the container and append sorted tasks
         taskListContainer.innerHTML = "";
-        tasks.forEach(task => taskListContainer.appendChild(task));
+        incompleteTasks.forEach(task => taskListContainer.appendChild(task));
+        completedTasks.forEach(task => taskListContainer.appendChild(task));
     }
 
     function addTask() {
