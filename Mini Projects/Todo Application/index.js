@@ -26,9 +26,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const editButton = document.getElementById("edit_button");
     const contentElements = document.querySelectorAll(".todo-list-heading, .todo-list-description");
     const taskSubmissionBtn = document.getElementById("task_submission");
-    const taskListContainer = document.getElementById("task_list"); 
+    const taskListContainer = document.getElementById("task_list");
 
-    let editMode = false; // Track edit mode state
+    let editMode = false;
     let clickCount = 0;
     let clickTimer;
 
@@ -53,30 +53,34 @@ document.addEventListener("DOMContentLoaded", function () {
         editButton.classList.toggle("active");
 
         if (editMode) {
-            editButton.style.backgroundColor = "#ffffff"; 
+            editButton.style.backgroundColor = "#ffffff";
             contentElements.forEach(element => element.setAttribute("contenteditable", "true"));
         } else {
-            editButton.style.backgroundColor = ""; 
+            editButton.style.backgroundColor = "";
             contentElements.forEach(element => element.setAttribute("contenteditable", "false"));
         }
     }
 
-    function handleTripleClick(event) {
-        if (!editMode) return; 
+    function handleTaskClick(event) {
+        if (editMode) return;
 
-        const clickedItem = event.currentTarget;
+        const taskItem = event.currentTarget;
         clickCount++;
 
         if (clickCount === 3) {
-            clickedItem.remove(); 
+            taskItem.remove(); // Remove the task after 3 clicks
             clickCount = 0;
             return;
+        }
+
+        if (clickCount === 1) {
+            taskItem.classList.toggle("completed-task");
         }
 
         clearTimeout(clickTimer);
         clickTimer = setTimeout(() => {
             clickCount = 0; 
-        }, 500); 
+        }, 500); // Reset after 500ms
     }
 
     function addTask() {
@@ -98,25 +102,23 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="prioritynav">
                 <div class="todo-list-priority">
                     <div class="circle ${taskPriority.toLowerCase()}"></div>
+                    <div class="priority-text">${taskPriority}</div>
                 </div>
                 <div class="todo-list-date">${getDate()}</div>
             </div>
             <div class="todo-list-checkbox"></div>
         `;
 
-        li.addEventListener("click", handleTripleClick);
+        li.addEventListener("click", handleTaskClick);
 
         taskListContainer.appendChild(li);
 
-     
         alert("Task added successfully!");
 
- 
         document.getElementById("task_heading").value = "";
         document.getElementById("priority").value = "";
         document.getElementById("details").value = "";
     }
-
 
     earlyAccessBtn?.addEventListener("click", () => togglePages(true));
     touchIdBtn?.addEventListener("click", () => togglePages(false));
@@ -124,10 +126,9 @@ document.addEventListener("DOMContentLoaded", function () {
     task?.addEventListener("click", () => toggleButtons(false));
     editButton?.addEventListener("click", toggleEditMode);
     taskSubmissionBtn?.addEventListener("click", addTask);
-    toggleButtons(true); 
-
+    toggleButtons(true);
 
     document.querySelectorAll(".todo-list-contents").forEach(item => {
-        item.addEventListener("click", handleTripleClick);
+        item.addEventListener("click", handleTaskClick);
     });
 });

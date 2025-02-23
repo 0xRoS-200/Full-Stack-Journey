@@ -649,3 +649,13 @@ option {
 #task_submission:active {
     background-color: #00ff04db;
 }
+
+.completed-task {
+    background-color: lightgreen !important;
+}
+
+.completed-task .todo-list-heading,
+.completed-task .todo-list-description {
+    text-decoration: line-through;
+    color: #555; /* Make text slightly faded */
+}
