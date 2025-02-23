@@ -496,7 +496,30 @@ body {
     width: 10px;
     border-radius: 50%;
     background: #000;
-    border: 1.5px solid rgb(38, 0, 255);
+    /* Default background */
+    border: 1.5px solid rgb(221, 255, 0);
+    /* Default border */
+}
+
+.circle.high {
+    background: #000;
+    /* Black background */
+    border-color: rgb(255, 0, 0);
+    /* Red border */
+}
+
+.circle.moderate {
+    background: rgb(0, 0, 0);
+    /* Blue background */
+    border-color: blue;
+    /* Blue border */
+}
+
+.circle.low {
+    background: #000;
+    /* Black background */
+    border-color: rgb(221, 255, 0);
+    /* Yellow border */
 }
 
 .main-content-tasks {
@@ -657,5 +680,5 @@ option {
 .completed-task .todo-list-heading,
 .completed-task .todo-list-description {
     text-decoration: line-through;
-    color: #555; 
+    color: #555;
 }
