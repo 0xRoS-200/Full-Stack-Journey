@@ -1,4 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const priorityLevels = {
+        "High": 3,
+        "Moderate": 2,
+        "Least": 1
+    };
+
     function getDate() {
         const today = new Date();
         return today.toLocaleDateString("en-GB");
@@ -64,7 +70,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-
     function handleTaskClick(event) {
         if (editMode) return;
 
@@ -94,7 +99,6 @@ document.addEventListener("DOMContentLoaded", function () {
         saveData();
     }
 
-
     function saveData() {
         localStorage.setItem("data", taskListContainer.innerHTML);
     }
@@ -104,18 +108,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (savedTasks && savedTasks.trim() !== "") {
             taskListContainer.innerHTML = savedTasks;
+            sortTasksByPriority(); // Sort tasks after loading
         } else {
             taskListContainer.innerHTML = `
                 <li id="welcome-message" class="todo-list-contents">
-                    <div class="todo-list-heading">Welcome New User!</div>
-                    <div class="todo-list-description">Start by adding your first task. Single click on the Task will mark it as completed and Triple click Deletes the Task! And the Edit mode lets you to edit the Task while it's Active! Have Fun!</div>
+                    <div class="todo-list-heading" contenteditable="false">Welcome New User!</div>
+                    <div class="todo-list-description" contenteditable="false">Start by adding your first task. Single click on the Task will mark it as completed and Triple click Deletes the Task! And the Edit mode lets you to edit the Task while it's Active! Have Fun!</div>
                 </li>
             `;
-            return;
         }
     }
 
-    showTask();
+    function sortTasksByPriority() {
+        const tasks = Array.from(taskListContainer.children);
+
+        tasks.sort((a, b) => {
+            const priorityA = priorityLevels[a.querySelector(".priority-text").textContent];
+            const priorityB = priorityLevels[b.querySelector(".priority-text").textContent];
+            return priorityB - priorityA; // Sort in descending order (High to Low)
+        });
+
+        // Clear the container and append sorted tasks
+        taskListContainer.innerHTML = "";
+        tasks.forEach(task => taskListContainer.appendChild(task));
+    }
 
     function addTask() {
         const taskHeading = document.getElementById("task_heading").value.trim();
@@ -154,6 +170,9 @@ document.addEventListener("DOMContentLoaded", function () {
         taskListContainer.appendChild(li);
         saveData();
 
+        // Sort tasks after adding a new one
+        sortTasksByPriority();
+
         alert("Task added successfully!");
 
         document.getElementById("task_heading").value = "";
@@ -161,7 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("details").value = "";
     }
 
-
+    showTask();
 
     earlyAccessBtn?.addEventListener("click", () => togglePages(true));
     touchIdBtn?.addEventListener("click", () => togglePages(false));
