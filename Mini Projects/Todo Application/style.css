@@ -657,5 +657,5 @@ option {
 .completed-task .todo-list-heading,
 .completed-task .todo-list-description {
     text-decoration: line-through;
-    color: #555; /* Make text slightly faded */
+    color: #555; 
 }

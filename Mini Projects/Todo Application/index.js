@@ -52,6 +52,9 @@ document.addEventListener("DOMContentLoaded", function () {
         editMode = !editMode;
         editButton.classList.toggle("active");
 
+        // Query the latest task elements (including dynamically added ones)
+        const contentElements = document.querySelectorAll(".todo-list-heading, .todo-list-description");
+
         if (editMode) {
             editButton.style.backgroundColor = "#ffffff";
             contentElements.forEach(element => element.setAttribute("contenteditable", "true"));
@@ -61,27 +64,58 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+
     function handleTaskClick(event) {
         if (editMode) return;
 
         const taskItem = event.currentTarget;
-        clickCount++;
 
-        if (clickCount === 3) {
+        // Get current click count from dataset or set it to 0
+        let taskClickCount = parseInt(taskItem.dataset.clickCount || "0", 10);
+        taskClickCount++;
+
+        if (taskClickCount === 3) {
             taskItem.remove(); // Remove the task after 3 clicks
-            clickCount = 0;
+            saveData();
             return;
         }
 
-        if (clickCount === 1) {
+        if (taskClickCount === 1) {
             taskItem.classList.toggle("completed-task");
         }
 
-        clearTimeout(clickTimer);
-        clickTimer = setTimeout(() => {
-            clickCount = 0;
-        }, 500); // Reset after 500ms
+        // Store updated click count in dataset
+        taskItem.dataset.clickCount = taskClickCount;
+
+        setTimeout(() => {
+            taskItem.dataset.clickCount = "0"; // Reset counter after 500ms
+        }, 500);
+
+        saveData();
     }
+
+
+    function saveData() {
+        localStorage.setItem("data", taskListContainer.innerHTML);
+    }
+
+    function showTask() {
+        const savedTasks = localStorage.getItem("data");
+
+        if (savedTasks && savedTasks.trim() !== "") {
+            taskListContainer.innerHTML = savedTasks;
+        } else {
+            taskListContainer.innerHTML = `
+                <li id="welcome-message" class="todo-list-contents">
+                    <div class="todo-list-heading">Welcome New User!</div>
+                    <div class="todo-list-description">Start by adding your first task. Single click on the Task will mark it as completed and Triple click Deletes the Task! And the Edit mode lets you to edit the Task while it's Active! Have Fun!</div>
+                </li>
+            `;
+            return;
+        }
+    }
+
+    showTask();
 
     function addTask() {
         const taskHeading = document.getElementById("task_heading").value.trim();
@@ -118,6 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
         li.addEventListener("click", handleTaskClick);
 
         taskListContainer.appendChild(li);
+        saveData();
 
         alert("Task added successfully!");
 
