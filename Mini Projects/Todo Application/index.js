@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         clearTimeout(clickTimer);
         clickTimer = setTimeout(() => {
-            clickCount = 0; 
+            clickCount = 0;
         }, 500); // Reset after 500ms
     }
 
@@ -93,12 +93,18 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+        // Remove the "Welcome New User!" message if it exists
+        const welcomeMessage = document.getElementById("welcome-message");
+        if (welcomeMessage) {
+            welcomeMessage.remove();
+        }
+
         const li = document.createElement("li");
         li.classList.add("todo-list-contents");
 
         li.innerHTML = `
-            <div class="todo-list-heading">${taskHeading}</div>
-            <div class="todo-list-description">${taskDetails}</div>
+            <div class="todo-list-heading" contenteditable="false">${taskHeading}</div>
+            <div class="todo-list-description" contenteditable="false">${taskDetails}</div>
             <div class="prioritynav">
                 <div class="todo-list-priority">
                     <div class="circle ${taskPriority.toLowerCase()}"></div>
@@ -119,6 +125,8 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("priority").value = "";
         document.getElementById("details").value = "";
     }
+
+
 
     earlyAccessBtn?.addEventListener("click", () => togglePages(true));
     touchIdBtn?.addEventListener("click", () => togglePages(false));
