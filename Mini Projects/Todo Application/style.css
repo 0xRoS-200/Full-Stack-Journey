@@ -420,6 +420,12 @@ body {
     box-shadow: 1px -1px 10px rgb(242, 0, 254), -1px 1px 10px rgb(50, 0, 250);
 }
 
+#edit_button:active {
+    background-color: #ffffff;
+    color: black;
+    border: 1px solid black;
+}
+
 .task-body-main {
     display: flex;
     flex-direction: column;
@@ -449,7 +455,8 @@ body {
     row-gap: 8px;
 }
 
-#completed-tasks {    /* to be added after task is completed*/
+#completed-tasks {
+    /* to be added after task is completed*/
     text-decoration: line-through;
     background-color: rgba(148, 246, 131, 0.853) !important;
 }
