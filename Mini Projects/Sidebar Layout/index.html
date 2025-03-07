@@ -58,31 +58,31 @@
               </div>
               <hr />
               <div class="tabs-contenbox">
-                <div class="tabs selected-cb">
+                <div id="db-cb" class="tabs selected-cb">
                   <img
                     src="icons/Home.svg"
                     alt="home"
                     class="tabsimg"
                   />Dashboard
                 </div>
-                <div class="tabs">
+                <div id="bm-cb" class="tabs">
                   <img
                     src="icons/bookmark.svg"
                     alt="bookmark"
                     class="tabsimg"
                   />Bookmarks
                 </div>
-                <div class="tabs">
+                <div id="tm-cb" class="tabs">
                   <img src="icons/users.svg" alt="users" class="tabsimg" />Team
                 </div>
-                <div class="tabs">
+                <div id="msg-cb" class="tabs">
                   <img
                     src="icons/comments.svg"
                     alt="Messages"
                     class="tabsimg"
                   />Messages
                 </div>
-                <div class="tabs">
+                <div id="cal-cb" class="tabs">
                   <img
                     src="icons/celandar.svg"
                     alt="Calender"
@@ -92,7 +92,7 @@
               </div>
             </div>
             <div class="profile-cb">
-                <div class="tabs">
+              <div class="tabs">
                 <img
                   src="icons/question-circle.svg"
                   alt="help"
@@ -111,20 +111,33 @@
 
           <div class="mainbox">
             <nav class="main-content-nav">
-              <div class="search-container">
-                <img src="icons/search.svg" alt="search">
-                <input type="text" name="search-container" id="search-main-box" placeholder="Search">
+              <div class="popup-container">
+                <div class="popup"><img src="icons/bars.svg" alt="bars" /></div>
+                <div class="search-container">
+                  <img src="icons/search.svg" alt="search" />
+                  <input
+                    type="text"
+                    name="search-container"
+                    id="search-main-box"
+                    placeholder="Search"
+                  />
+                </div>
               </div>
               <div class="user-container">
-                <div class="notification"><img src="icons/bell.svg" alt="bell"></div>
-                <div class="profile"><img src="icons/pexels-ulasch-30934420.jpg" alt="profile"></div>
+                <div class="notification">
+                  <img src="icons/bell.svg" alt="bell" />
+                </div>
+                <div class="profile">
+                  <img src="icons/pexels-ulasch-30934420.jpg" alt="profile" />
+                </div>
               </div>
             </nav>
-            <hr>
+            <hr />
             <div class="displaybox-inner"></div>
           </div>
         </div>
       </div>
     </main>
+    <script src="script.js"></script>
   </body>
 </html>
