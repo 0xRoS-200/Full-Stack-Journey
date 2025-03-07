@@ -48,7 +48,7 @@ body {
     font-weight: 450;
 }
 
-#new{
+#new {
     font-size: 0.6em;
     color: #8a2be2;
     font-weight: normal;
@@ -58,18 +58,71 @@ body {
     padding: 1px 5px;
     border-radius: 5px;
 }
+
 .action-container {
     display: flex;
+    gap: 1em
 }
 
-.screens{
+.screens {
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 2.2em;
     border: 2px solid rgb(226, 226, 226);
-    padding: 5px 15px;
+    padding: 2px 15px;
     border-radius: 20px;
+    cursor: pointer;
 }
 
-.screen-size{
-    height: 19px;
+.screen-size {
+    height: 20px;
+}
+
+hr {
+    color: #e8e8e8;
+}
+
+.frameworks-dropdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgb(227, 224, 224);
+    padding: 2px 25px;
+    border-radius: 20px;
+    gap: 0.3em;
+    cursor: pointer;
+}
+
+.frameworks-dropdown p {
+    font-size: 0.9em;
+}
+
+.get-code-btn {
+    border: 2px solid rgb(227, 224, 224);
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 2px 10px;
+    color: #8a2be2;
+    cursor: pointer;
+}
+
+.screen-size1 {
+    height: 20px;
+}
+
+.get-code-btn img {
+    filter: invert(24%) sepia(38%) saturate(6070%) hue-rotate(263deg) brightness(88%) contrast(102%);
+}
+
+.mainblock-container{
+    margin-top: 1.5em;
+    border-radius: 15px;
+    background-color: #f3f6f9;
+    height: 95%;
+    width: 100%;
 }

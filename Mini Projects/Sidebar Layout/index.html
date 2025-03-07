@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css" />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+      @import "primeicons/primeicons.css";
     </style>
   </head>
   <body>
@@ -17,6 +18,8 @@
       <h3 class="sub-heading">Application / Sidebarlayout</h3>
       <h1 class="main-heading">Sidebar Layout</h1>
       <div class="floating-content-container">
+
+
         <nav class="floating-content-nav">
           <div class="board-name-container">
             <p>Floating Content</p>
@@ -24,20 +27,28 @@
           </div>
           <div class="action-container">
             <div class="screens">
-                <img src="icons/computer.svg" alt="desktop" class="screen-size">
-                <img src="icons/tablet.svg" alt="tablet" class="screen-size">
-                <img src="icons/mobile-notch.svg" alt="mobile" class="screen-size">
+              <img src="icons/computer.svg" alt="desktop" class="screen-size" />
+              <img src="icons/tablet.svg" alt="tablet" class="screen-size" />
+              <img
+                src="icons/mobile-notch.svg"
+                alt="mobile"
+                class="screen-size"
+              />
             </div>
-            <hr>
-            <select name="frameworks" id="framework-dropdown">
-                <option value="Vue">Vue</option>
-                <option value="Angular">Angular</option>
-                <option value="React">React</option>
-                <option value="Html">Html</option>
-            </select>
-            <button class="get-code-btn">Get the Code </button>
+            <hr />
+            <div class="frameworks-dropdown">
+              <p>Vue</p>
+              <img src="icons/angle-down.svg" alt="angle-down" />
+            </div>
+            <hr />
+            <button class="get-code-btn"><p>Get the Code</p><img src="icons/arrow-right.svg" alt="arrow right" class="screen-size1"></button>
           </div>
         </nav>
+
+        <div class="mainblock-container">
+          <div class="contentbox"></div>
+          <div class="mainbox"></div>
+        </div>
       </div>
     </main>
   </body>
