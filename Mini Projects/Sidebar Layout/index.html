@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SideBar Layouts</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+    </style>
+  </head>
+  <body>
+    <header>
+      <!-- Here will be your Nav Bar and other header elements -->
+    </header>
+    <main>
+      <h3 class="sub-heading">Application / Sidebarlayout</h3>
+      <h1 class="main-heading">Sidebar Layout</h1>
+      <div class="floating-content-container">
+        <nav class="floating-content-nav">
+          <div class="board-name-container">
+            <p>Floating Content</p>
+            <p id="new">New</p>
+          </div>
+          <div class="action-container">
+            <div class="screens">
+                <img src="icons/computer.svg" alt="desktop" class="screen-size">
+                <img src="icons/tablet.svg" alt="tablet" class="screen-size">
+                <img src="icons/mobile-notch.svg" alt="mobile" class="screen-size">
+            </div>
+            <hr>
+            <select name="frameworks" id="framework-dropdown">
+                <option value="Vue">Vue</option>
+                <option value="Angular">Angular</option>
+                <option value="React">React</option>
+                <option value="Html">Html</option>
+            </select>
+            <button class="get-code-btn">Get the Code </button>
+          </div>
+        </nav>
+      </div>
+    </main>
+  </body>
+</html>
