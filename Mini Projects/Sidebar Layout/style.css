@@ -12,6 +12,10 @@
     font-family: var(--ff-main);
 }
 
+*:focus {
+    outline: none;
+}
+
 body {
     padding: 3em;
 }
@@ -119,10 +123,112 @@ hr {
     filter: invert(24%) sepia(38%) saturate(6070%) hue-rotate(263deg) brightness(88%) contrast(102%);
 }
 
-.mainblock-container{
+.mainblock-container {
     margin-top: 1.5em;
     border-radius: 15px;
     background-color: #f3f6f9;
     height: 95%;
     width: 100%;
+    display: flex;
+    padding: 1em;
+    gap: 0.5em;
+}
+
+.contentbox {
+    height: 100%;
+    min-width: 250px;
+    width: 20%;
+    background-color: #f3f6f9;
+    display: flex;
+    flex-direction: column;
+    padding: 1em 1em;
+    justify-content: space-between;
+}
+
+.contentbox hr {
+    border: none;
+    border-top: 2px solid #e2e2e2;
+    /* Ensures visibility */
+    margin: 15px 0;
+    width: 90%;
+}
+
+.logo-contentbox {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.logo-contentbox p {
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.logo-contentbox img {
+    height: 35px;
+    border-radius: 50%;
+}
+
+.tabs-contenbox {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em;
+    gap: 0.5em;
+    color: var(--f-color_text);
+}
+
+.tabs {
+    display: flex;
+    align-items: center;
+    font-weight: 450;
+    gap: 0.3em;
+    cursor: pointer;
+    padding: 0.3em;
+    color: var(--f-color_text);
+}
+
+.tabsimg {
+    height: 25px;
+    filter: invert(34%) sepia(20%) saturate(470%) hue-rotate(176deg) brightness(99%) contrast(92%);
+}
+
+.selected-cb {
+    border: 2px solid rgb(225, 225, 225);
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0.5px 0.5px 1px rgb(225, 225, 225), -0.5px -0.5px 1px rgb(225, 225, 225);
+    min-width: 150px;
+    color: #030304;
+}
+
+.mainbox {
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    width: 79%;
+    min-width: 300px;
+    border-radius: 10px;
+    padding: 1em;
+}
+
+.main-content-nav{
+    display: flex;
+    padding: 0.5em;
+}
+.search-container{
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    border: 1px solid blueviolet;
+    padding: 0.3em;
+    border-radius: 5px;
+}  
+
+.search-container img{
+    height: 15px;
+    filter: invert(34%) sepia(20%) saturate(470%) hue-rotate(176deg) brightness(99%) contrast(92%);
+}
+
+#search-main-box{
+    border: none;
+    font-size: 1em;
 }
