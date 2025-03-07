@@ -143,6 +143,7 @@ hr {
     flex-direction: column;
     padding: 1em 1em;
     justify-content: space-between;
+    border-radius: 10px;
 }
 
 .contentbox hr {
@@ -205,30 +206,74 @@ hr {
     background-color: rgb(255, 255, 255);
     height: 100%;
     width: 79%;
-    min-width: 300px;
+    min-width: 400px;
     border-radius: 10px;
     padding: 1em;
 }
 
-.main-content-nav{
+.main-content-nav {
     display: flex;
     padding: 0.5em;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
-.search-container{
+
+.search-container {
     display: flex;
     align-items: center;
     gap: 0.5em;
     border: 1px solid blueviolet;
-    padding: 0.3em;
+    padding: 0.5em;
     border-radius: 5px;
-}  
+    height: 40px;
+    margin-right: 200px;
+}
 
-.search-container img{
+.search-container img {
     height: 15px;
     filter: invert(34%) sepia(20%) saturate(470%) hue-rotate(176deg) brightness(99%) contrast(92%);
 }
 
-#search-main-box{
+#search-main-box {
     border: none;
     font-size: 1em;
+}
+
+.user-container {
+    display: flex;
+    gap: 0.5em;
+    align-items: center;
+}
+
+.notification {
+    border: 2px solid rgb(228, 228, 228);
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.notification img {
+    height: 15px;
+    filter: invert(34%) sepia(20%) saturate(470%) hue-rotate(176deg) brightness(99%) contrast(92%);
+}
+
+.profile img {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+}
+
+.mainbox hr {
+    margin-top: 0.5em;
+    border: 1px dotted rgb(229, 229, 229);
+}
+
+.displaybox-inner{
+    margin-top: 1em;
+    border: 2px dashed rgb(222, 222, 222);
+    height: 88%;
+    min-width: 350px;
+    border-radius: 10px;
 }
