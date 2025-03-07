@@ -27,38 +27,6 @@ body {
     min-width: 360px
 }
 
-.action-container {
-    display: flex;
-    gap: 1em
-}
-
-.screens {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2.2em;
-    border: 2px solid rgb(226, 226, 226);
-    padding: 2px 15px;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-.screen-size {
-    height: 20px;
-}
-
-hr {
-    color: #e8e8e8;
-}
-
-.screen-size1 {
-    height: 20px;
-}
-
-.get-code-btn img {
-    filter: invert(24%) sepia(38%) saturate(6070%) hue-rotate(263deg) brightness(88%) contrast(102%);
-}
-
 .mainblock-container {
     border-radius: 15px;
     background-color: #f3f6f9;
