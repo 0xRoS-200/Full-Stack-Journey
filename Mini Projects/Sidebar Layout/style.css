@@ -21,6 +21,9 @@ body {
     justify-content: center;
     align-items: center;
     padding: 0 1em;
+    height: 100vh;
+    width: 100vw;
+    margin: 3em 0;
 }
 
 .floating-content-container {
@@ -106,7 +109,7 @@ body {
     border-radius: 8px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
     color: #030304;
-    opacity: 1 !important;
+    opacity: 1 !important; 
 }
 
 
@@ -207,9 +210,9 @@ body {
     opacity: 0;
     width: 250px;
     height: 95%;
-    background-color: #f8fafc;
+    background-color: #f8fafc; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: left 0.3s ease-in-out;
+    transition: left 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 .newbox.active {
@@ -246,7 +249,7 @@ body {
     height: 100%;
     min-width: 250px;
     width: 20%;
-    background-color: #f3f6f9;
+    background-color: #dbc4f9;
     display: flex;
     flex-direction: column;
     padding: 1em 1em;
@@ -258,6 +261,7 @@ body {
 
     body {
         padding: 0;
+        margin: 0;
     }
 
     .popup {
@@ -288,15 +292,19 @@ body {
 
 }
 
-@media screen and (min-width: 700px) and (max-width: 1280px) {
+@media screen and (min-width: 700px) and (max-width: 1024px) {
 
     body {
         padding: 0.5em;
+        margin: 0;
+        width: 400;
+        min-width: 350;
     }
 
     .popup {
         display: block;
     }
+
 
     .floating-content-nav {
         display: none;
