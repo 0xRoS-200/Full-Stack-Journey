@@ -220,6 +220,7 @@ body {
     background-color: #f8fafc;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: left 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    z-index: 1000;
 }
 
 .newbox.active {
@@ -292,14 +293,14 @@ body {
         height: 80%;
     }
 
-    .user-container {
-        margin-top: 1em;
+    .user-container{
+        margin-top: 0.5em;
     }
 
 
 }
 
-@media screen and (min-width: 400px) and (max-width: 780px) {
+@media screen and (min-width: 400px) and (max-width: 808px) {
 
     body {
         padding: 0.5em;
@@ -330,4 +331,7 @@ body {
         height: 88%;
     }
 
+    .user-container{
+        margin-top: 0.5em;
+    }
 }
