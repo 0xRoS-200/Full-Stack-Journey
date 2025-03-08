@@ -20,7 +20,7 @@ html,
 body {
     height: 100%;
     width: 100%;
-    overflow: hidden;
+    overflow: auto;
     margin: 0;
     padding: 0;
     display: flex;
@@ -263,6 +263,7 @@ body {
     padding: 1em 1em;
     justify-content: space-between;
     border-radius: 10px;
+    margin-left: 0.5em;
 }
 
 @media screen and (max-width: 400px) {
@@ -293,8 +294,12 @@ body {
         height: 80%;
     }
 
-    .user-container{
+    .user-container {
         margin-top: 0.5em;
+    }
+
+    .main-content-nav {
+        margin-top: 1em;
     }
 
 
@@ -331,7 +336,11 @@ body {
         height: 88%;
     }
 
-    .user-container{
+    .user-container {
         margin-top: 0.5em;
+    }
+
+    .main-content-nav {
+        margin-top: 1em;
     }
 }
