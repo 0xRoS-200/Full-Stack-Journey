@@ -16,31 +16,38 @@
     outline: none;
 }
 
+html,
 body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 1em;
-    height: 100vh;
-    width: 100vw;
-    margin: 3em 0;
 }
 
 .floating-content-container {
-    margin-top: 1em;
-    width: 95vw;
-    height: 800px;
-    min-width: 360px
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 .mainblock-container {
-    border-radius: 15px;
-    background-color: #f3f6f9;
-    height: 95%;
     width: 100%;
+    height: 100%;
     display: flex;
-    padding: 0.5em;
-    gap: 0.5em;
+    flex-wrap: wrap;
+    padding: 0;
+    gap: 0;
+    overflow: hidden;
+    align-items: center;
 }
 
 .contentbox {
@@ -109,18 +116,18 @@ body {
     border-radius: 8px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
     color: #030304;
-    opacity: 1 !important; 
+    opacity: 1 !important;
 }
 
 
 .mainbox {
     background-color: rgb(255, 255, 255);
     height: 100%;
-    width: 79%;
     min-width: 300px;
     border-radius: 10px;
     padding: 1em;
     position: relative;
+    flex: 1;
 }
 
 .main-content-nav {
@@ -210,7 +217,7 @@ body {
     opacity: 0;
     width: 250px;
     height: 95%;
-    background-color: #f8fafc; 
+    background-color: #f8fafc;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: left 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
@@ -257,7 +264,7 @@ body {
     border-radius: 10px;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 400px) {
 
     body {
         padding: 0;
@@ -292,7 +299,7 @@ body {
 
 }
 
-@media screen and (min-width: 700px) and (max-width: 1024px) {
+@media screen and (min-width: 400px) and (max-width: 780px) {
 
     body {
         padding: 0.5em;
@@ -319,6 +326,7 @@ body {
     }
 
     .displaybox-inner {
+        margin-top: 0.5em;
         height: 88%;
     }
 
