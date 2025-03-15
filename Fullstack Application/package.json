@@ -1,0 +1,16 @@
+{
+  "name": "fullstack-application",
+  "version": "1.0.0",
+  "description": "A Node Project for Authentication",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "rohitsingh",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
