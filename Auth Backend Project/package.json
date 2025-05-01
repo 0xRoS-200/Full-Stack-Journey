@@ -10,11 +10,13 @@
   "author": "Rohit Singh",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "mongodb": "^6.15.0",
-    "mongoose": "^8.13.2"
+    "mongoose": "^8.13.2",
+    "nodemailer": "^6.10.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.9"
