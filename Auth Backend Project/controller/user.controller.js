@@ -93,10 +93,21 @@ const verifyUser = async (req, res) => {
     user.isVerified = true;
     user.verificationToken = undefined;
     await user.save()
+
+    res.status(200).json({
+        success: true,
+        message: "Verification Successful!",
+        token,
+        user: {
+            id: user._id,
+            name: user.name,
+            role: user.role
+        }
+    });
 }
 
 const login = async (req, res) => {
-    const { email, password, isVerified } = req.body;
+    const { email, password } = req.body;
 
     if (!email || !password) {
         return res.status(400).json({
@@ -105,42 +116,40 @@ const login = async (req, res) => {
     }
 
     try {
-        const user = User.findOne({ email })
+        const user = await User.findOne({ email });
         if (!user) {
             return res.status(400).json({
                 message: "Invalid email or password!"
             });
         }
 
-        const isMatch = await bcrypt.compare(password, user.password)
-
-        console.log(isMatch);
+        const isMatch = await bcrypt.compare(password, user.password);
 
         if (!isMatch) {
             return res.status(400).json({
-                message: "Invalid Password!"
+                message: "Invalid email or password!" // Better to keep this generic
             });
         }
 
-        if (!isVerified) {
+        if (!user.isVerified) {
             return res.status(400).json({
-                message: "Please verify the email before Login!"
+                message: "Please verify the email before login!"
             });
         }
 
         const token = jwt.sign(
             { id: user._id, role: user.role },
-            "shhhhh", {
-            expiresIn: '24h'
-        });
+            process.env.JWT_SECRET, // use env variable
+            { expiresIn: '24h' }
+        );
 
         const cookieOptions = {
             httpOnly: true,
-            secure: true,
+            secure: true, // set to false for development if needed
             maxAge: 24 * 60 * 60 * 1000
-        }
+        };
 
-        res.cookie("token", token, cookieOptions)
+        res.cookie("token", token, cookieOptions);
 
         res.status(200).json({
             success: true,
@@ -154,13 +163,14 @@ const login = async (req, res) => {
         });
 
     } catch (error) {
-        console.log(error)
-        res.status(400).json({
-            message: "Unable to Login",
-            error,
+        console.error(error);
+        res.status(500).json({
+            message: "Unable to login",
+            error: error.message,
             success: false
-        })
+        });
     }
 }
+
 
 export { registerUser, verifyUser, login };
