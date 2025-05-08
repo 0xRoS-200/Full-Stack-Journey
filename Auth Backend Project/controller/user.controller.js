@@ -172,5 +172,36 @@ const login = async (req, res) => {
     }
 }
 
+const getUser = async (req, res) => {
+    try {
 
-export { registerUser, verifyUser, login };
+    } catch (error) {
+
+    }
+}
+
+const logout = async (req, res) => {
+    try {
+
+    } catch (error) {
+
+    }
+}
+
+const forgotPassword = async (req, res) => {
+    try {
+
+    } catch (error) {
+
+    }
+}
+
+const ResetPassword = async (req, res) => {
+    try {
+
+    } catch (error) {
+
+    }
+}
+
+export { registerUser, verifyUser, login, getUser, logout, forgotPassword, ResetPassword };
