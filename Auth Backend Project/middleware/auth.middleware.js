@@ -11,7 +11,7 @@ export const isLoggedIn = async (req, res, next) => {
             console.log("No Token Found!");
             return res.status(401).json({
                 success: false,
-                message: "No Token Found!"
+                message: "No Token Found! User not logged In"
             });
 
         }

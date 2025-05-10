@@ -28,14 +28,6 @@ app.get('/', (req, res) => {
   res.send('Cohort!')
 })
 
-app.get('/rohit-singh', (req, res) => {
-  res.send('Aagye Apni Maut ka Tamasha Dekhne!')
-})
-
-app.get('/divyam', (req, res) => {
-  res.send('Hi Girlie!')
-})
-
 app.get
 
 //connect to db 

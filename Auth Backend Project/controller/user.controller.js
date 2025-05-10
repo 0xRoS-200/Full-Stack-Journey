@@ -228,7 +228,6 @@ const logout = async (req, res) => {
     }
 }
 
-
 const forgotPassword = async (req, res) => {
     try {
 
