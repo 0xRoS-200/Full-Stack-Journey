@@ -60,6 +60,8 @@ const registerUser = async (req, res) => {
 
         await transporter.sendMail(mailOption);
 
+        console.log("User Successfully Registered")
+
         res.status(201).json({
             message: "User registered successfully",
             success: true
@@ -104,6 +106,7 @@ const verifyUser = async (req, res) => {
             role: user.role
         }
     });
+    console.log("User Successfully Verified")
 }
 
 const login = async (req, res) => {
@@ -127,7 +130,7 @@ const login = async (req, res) => {
 
         if (!isMatch) {
             return res.status(400).json({
-                message: "Invalid email or password!" // Better to keep this generic
+                message: "Invalid email or password!"
             });
         }
 
@@ -162,6 +165,9 @@ const login = async (req, res) => {
             }
         });
 
+
+        console.log("User Successfully Logged In")
+
     } catch (error) {
         console.error(error);
         res.status(500).json({
@@ -174,19 +180,54 @@ const login = async (req, res) => {
 
 const getUser = async (req, res) => {
     try {
+        const user = await User.findById(req.user.id)
+            .select('-password')
+
+        console.log(user);
+
+        if (!user) {
+            return res.status(400).json({
+                success: false,
+                message: "All fields are required!"
+            });
+        }
+
+        res.status(200).json({
+            success: true,
+            user,
+        });
 
     } catch (error) {
-
+        console.error(error);
+        res.status(500).json({
+            message: "Unable to Get User",
+            error: error.message,
+            success: false
+        });
     }
 }
 
 const logout = async (req, res) => {
     try {
-
+        res.clearCookie('token', {
+            httpOnly: true,
+            secure: true,
+            sameSite: 'None'
+        });
+        console.log("Log Out Successful!");
+        return res.status(200).json({
+            success: true,
+            message: "Logged out Successfully"
+        });
     } catch (error) {
-
+        console.error(error);
+        return res.status(500).json({
+            message: "Unable to logout",
+            success: false
+        });
     }
 }
+
 
 const forgotPassword = async (req, res) => {
     try {
