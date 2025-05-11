@@ -1,5 +1,5 @@
 import express from 'express'
-import { getUser, login, logout, registerUser, verifyUser } from '../controller/user.controller.js'
+import { forgotPassword, getUser, login, logout, registerUser, resetPassword, verifyUser } from '../controller/user.controller.js'
 import { isLoggedIn } from '../middleware/auth.middleware.js'
 
 const router = express.Router()
@@ -9,5 +9,7 @@ router.get("/verify/:token", verifyUser)
 router.post("/login", login)
 router.post("/profile", isLoggedIn, getUser)
 router.post("/logout", isLoggedIn, logout)
+router.post("/forgotpassword", forgotPassword)
+router.post("/reset/:token", resetPassword)
 
 export default router

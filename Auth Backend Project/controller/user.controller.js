@@ -229,19 +229,116 @@ const logout = async (req, res) => {
 }
 
 const forgotPassword = async (req, res) => {
+    const { email } = req.body;
+    if (!email) {
+        return res.status(400).json({
+            message: "Email is required!"
+        });
+    }
+
     try {
+        const existingUser = await User.findOne({ email })
 
-    } catch (error) {
+        if (!existingUser) {
+            return res.status(400).json({
+                message: "User does not exists!"
+            });
+        }
 
+        const resetToken = crypto.randomBytes(32).toString("hex")
+        console.log(resetToken);
+        existingUser.resetPasswordToken = resetToken;
+        existingUser.resetPasswordExpiry = Date.now() + 120 * 60 * 1000; // 2 hours
+
+        await existingUser.save()
+
+        //send email
+        const transporter = nodemailer.createTransport({
+            host: process.env.MAILTRAP_HOST,
+            port: process.env.MAILTRAP_PORT,
+            secure: false, // true for port 465, false for other ports
+            auth: {
+                user: process.env.MAILTRAP_USERNAME,
+                pass: process.env.MAILTRAP_PASSWORD,
+            },
+        });
+
+        const resetMail = {
+            from: process.env.MAILTRAP_SENDEREMAIL,
+            to: existingUser.email, // list of receivers
+            subject: "Proceed with Password Reset",
+            text: `Please click on the following link:
+            ${process.env.BASE_URL}/api/v1/users/reset/${resetToken}`,
+        };
+
+        await transporter.sendMail(resetMail);
+
+        console.log("Sent Reset Mial")
+
+        res.status(201).json({
+            existingUser,
+            message: "Forgot Password Mail Sent",
+            success: true
+        })
+    }
+    catch (error) {
+        console.log(error)
+        res.status(400).json({
+            message: "Failed to Forgot Password",
+            error,
+            success: false
+        })
     }
 }
 
-const ResetPassword = async (req, res) => {
+
+const resetPassword = async (req, res) => {
+    const { token } = req.params;
+    const { password } = req.body;
+
+    // Validate inputs
+    if (!token || !password) {
+        return res.status(400).json({
+            message: "Token and password are required!",
+            success: false
+        });
+    }
+
     try {
+        // Find user with matching token and valid expiry
+        const user = await User.findOne({
+            resetPasswordToken: token,
+            resetPasswordExpiry: { $gt: Date.now() }
+        });
+
+        if (!user) {
+            return res.status(400).json({
+                message: "Invalid or expired token",
+                success: false
+            });
+        }
+
+        user.password = password;  
+        user.resetPasswordToken = undefined;
+        user.resetPasswordExpiry = undefined;
+
+        await user.save();
+
+        console.log("Password reset done successfully");
+
+        res.status(200).json({
+            message: "Password reset done successfully",
+            success: true
+        });
 
     } catch (error) {
-
+        console.error(error);
+        res.status(500).json({
+            message: "Password reset unsuccessful!",
+            error: error.message,
+            success: false
+        });
     }
-}
+};
 
-export { registerUser, verifyUser, login, getUser, logout, forgotPassword, ResetPassword };
+export { registerUser, verifyUser, login, getUser, logout, forgotPassword, resetPassword };

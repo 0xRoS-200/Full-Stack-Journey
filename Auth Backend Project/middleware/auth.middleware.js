@@ -1,4 +1,5 @@
 import jwt from "jsonwebtoken"
+import User from "../model/User.model.js";
 
 export const isLoggedIn = async (req, res, next) => {
     try {
@@ -18,6 +19,7 @@ export const isLoggedIn = async (req, res, next) => {
 
         const decoded = await jwt.verify(token, process.env.JWT_SECRET)
         console.log("decoded data: ", decoded);
+        // const userId = await User.findById(decoded.id)
         req.user = decoded;
 
         next()
